@@ -1,0 +1,45 @@
+// Define color variables for the links
+$QUEUP: rgb(0, 184, 40);
+$TMU: rgb(40, 90, 176);
+
+a {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+
+  // Base style for link underlines
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 1.6);
+  }
+
+  // Hover effect for all links
+  &:hover::after {
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Specific styles for QUEUP link
+a.QUEUP {
+  color: $QUEUP; // Set text color
+  &::after {
+    background: rgba(0, 184, 40, 0.25); // Use specific color directly for background
+  }
+}
+
+// Specific styles for TMU link
+a.TMU {
+  color: $TMU; // Set text color
+  &::after {
+    background: rgba(40, 90, 176, 0.25); // Use specific color directly for background
+  }
+}
